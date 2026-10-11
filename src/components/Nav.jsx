@@ -33,10 +33,13 @@ export default function Nav() {
 
   return (
     <nav
-      className="fixed top-0 left-0 w-full z-20 bg-background/30 backdrop-blur-sm shadow-[0_1px_15px_rgba(255,255,255,0.1)]"
+      className="fixed top-0 left-0 w-full z-20 shadow-[0_1px_15px_rgba(255,255,255,0.1)]"
       aria-label="Primary navigation"
     >
-      <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      {/* Blur lives on its own layer: backdrop-filter on <nav> would trap the fixed overlay inside the nav bar */}
+      <div className="absolute inset-0 -z-10 bg-background/30 backdrop-blur-sm" aria-hidden="true" />
+
+      <div className="relative z-50 max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
         <Link href="/" className="font-bold text-2xl transition-all duration-300 hover:text-accent">
           Fatemeh Yafteh
         </Link>
@@ -57,7 +60,7 @@ export default function Nav() {
 
         {/* Mobile Hamburger */}
         <button
-          className="md:hidden text-(--color-accent) focus:outline-none"
+          className="md:hidden -m-2 p-2 min-w-11 min-h-11 flex items-center justify-center text-2xl text-(--color-accent) focus:outline-none"
           onClick={() => setIsOpen((s) => !s)}
           aria-controls="mobile-menu"
           aria-expanded={isOpen}
@@ -71,7 +74,7 @@ export default function Nav() {
   <div id="mobile-menu" role="dialog" aria-modal="true" className="md:hidden">
     {/* Overlay */}
     <div
-      className="fixed inset-0 backdrop-blur-3xl bg-black/40 z-40"
+      className="fixed inset-0 backdrop-blur-[2px] bg-black/30 z-40"
       onClick={() => setIsOpen(false)}
       aria-hidden="true"
     />
