@@ -82,7 +82,7 @@ export default function Nav() {
     {/* Menu */}
     <ul
       className="
-        absolute top-[4.5rem] left-0 right-0 
+        absolute top-full left-0 right-0 
         bg-(--color-background) 
         text-center pb-4 z-50 shadow-xl
         animate-slideDown
