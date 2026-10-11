@@ -93,7 +93,7 @@
 
   /* سکشن اصلی */
   .section {
-    @apply relative mt-32 flex flex-col items-center justify-center ;
+    @apply relative mt-12 md:mt-32 flex flex-col items-center justify-center ;
     background-color: var(--color-background);
     /* color: var(--color-text-primary); */
   }
