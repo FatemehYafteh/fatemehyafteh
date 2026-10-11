@@ -24,7 +24,7 @@ export default function HomePage() {
         <p className="subheading mb-10 md:mb-6">
         Explore my projects and skills, and feel free to get in touch!
       </p>
-        <div className="flex justify-center gap-6">
+        <div className="flex flex-wrap justify-center gap-6">
           <Link href="/projects" className="btn-primary">
             View Projects
           </Link>
