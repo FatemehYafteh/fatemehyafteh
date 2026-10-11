@@ -43,12 +43,12 @@ export default function Contact() {
             href={item.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="card effect hover:shadow-xl transition flex flex-col items-center justify-center text-center"
+            className="card max-md:p-4! effect hover:shadow-xl transition flex flex-col items-center justify-center text-center"
           >
             <h3 className="text-xl font-bold mb-2">{item.type}</h3>
             <div className="flex gap-1.5">
-              <p className="text-xl">{item.icon}</p>
-              <p className="text-secondary">{item.value}</p>
+              <p className="text-xl shrink-0">{item.icon}</p>
+              <p className="text-secondary min-w-0 wrap-anywhere">{item.value}</p>
             </div>
           </a>
         ))}
