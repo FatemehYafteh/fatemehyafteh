@@ -25,10 +25,11 @@ export default function HomePage() {
         Explore my projects and skills, and feel free to get in touch!
       </p>
         <div className="flex flex-wrap justify-center gap-6">
-          <Link href="/projects" className="btn-primary">
+          {/* Same width, and a transparent border so both buttons match the outline button's height */}
+          <Link href="/projects" className="btn-primary w-38 text-center border border-transparent">
             View Projects
           </Link>
-          <Link href="/contact" className="btn-outline">
+          <Link href="/contact" className="btn-outline w-38 text-center">
             Contact Me
           </Link>
         </div>
