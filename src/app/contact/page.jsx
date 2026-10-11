@@ -1,7 +1,12 @@
-import Head from "next/head";
 import { HiOutlineMail } from "react-icons/hi";
 import { LuLinkedin } from "react-icons/lu";
 import { FaGithub } from "react-icons/fa";
+
+export const metadata = {
+  title: "Contact",
+  description:
+    "Get in touch with Fatemeh, a front-end developer specialized in React and Next.js.",
+};
 
 export default function Contact() {
   const contactMethods = [
@@ -29,14 +34,6 @@ export default function Contact() {
   ];
 
   return (
-    <>
-    <Head>
-    <title>Contact - Fatemeh</title>
-    <meta
-      name="description"
-      content="Get in touch with Fatemeh, a front-end developer specialized in React and Next.js."
-    />
-  </Head>
     <section className="section max-w-6xl mx-auto px-6 py-20" id="contact">
       <h2 className="heading mb-12 text-center">Contact Me</h2>
       <div className=" grid gap-8 md:grid-cols-2 lg:grid-cols-3 ">
@@ -57,6 +54,5 @@ export default function Contact() {
         ))}
       </div>
     </section>
-    </>
   );
 }

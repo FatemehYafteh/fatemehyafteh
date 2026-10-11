@@ -1,17 +1,18 @@
 import Link from "next/link";
+import { projects } from "@/data/projects";
+
+export const metadata = {
+  title: "Projects",
+  description:
+    "Projects by Fatemeh, a front-end developer building web applications with React, Next.js, and Tailwind CSS.",
+};
 
 export default function ProjectsPage() {
-  const projectList = [
-    { id: 1, title: "Portfolio Website", description: "A modern portfolio built with Next.js and Tailwind CSS.", slug: "portfolio-website" },
-    { id: 2, title: "E-commerce App", description: "Online store with React and Stripe.", slug: "ecommerce-app" },
-    { id: 3, title: "Dashboard UI", description: "Interactive admin dashboard with charts and tables.", slug: "dashboard-ui" },
-  ];
-
   return (
     <div className="section px-6 max-w-5xl mx-auto">
       <h1 className="heading text-center mb-12">My Projects</h1>
       <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-        {projectList.map(project => (
+        {projects.map(project => (
           <div key={project.id} className="card hover:shadow-xl transition">
             <h3 className="text-xl font-bold  mb-3">{project.title}</h3>
             <p className="text-secondary ">{project.description}</p>

@@ -47,7 +47,7 @@ export default function Nav() {
             <li key={item.name}>
               <Link
                 href={item.href}
-                className="text-[--color-text-primary] hover:text-accent transition font-medium focus:outline-none "
+                className="text-(--color-text-primary) hover:text-accent transition font-medium focus:outline-none "
               >
                 {item.name}
               </Link>
@@ -57,7 +57,7 @@ export default function Nav() {
 
         {/* Mobile Hamburger */}
         <button
-          className="md:hidden text-[--color-accent] focus:outline-none"
+          className="md:hidden text-(--color-accent) focus:outline-none"
           onClick={() => setIsOpen((s) => !s)}
           aria-controls="mobile-menu"
           aria-expanded={isOpen}
@@ -80,7 +80,7 @@ export default function Nav() {
     <ul
       className="
         absolute top-[4.5rem] left-0 right-0 
-        bg-[--color-background] 
+        bg-(--color-background) 
         text-center pb-4 z-50 shadow-xl
         animate-slideDown
       "
@@ -89,7 +89,7 @@ export default function Nav() {
         <li key={item.name}>
           <Link
             href={item.href}
-            className="block w-full py-3 text-[--color-text-primary] hover:text-accent transition font-medium text-lg"
+            className="block w-full py-3 text-(--color-text-primary) hover:text-accent transition font-medium text-lg"
             onClick={() => setIsOpen(false)}
           >
             {item.name}
