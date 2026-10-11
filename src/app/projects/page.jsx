@@ -9,7 +9,7 @@ export const metadata = {
 
 export default function ProjectsPage() {
   return (
-    <div className="section px-6 max-w-5xl mx-auto">
+    <div className="section px-2 md:px-6 max-w-5xl mx-auto">
       <h1 className="heading text-center mb-12">My Projects</h1>
       <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
         {projects.map(project => (

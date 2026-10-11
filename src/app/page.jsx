@@ -12,7 +12,7 @@ export default function HomePage() {
     <div className="section relative overflow-hidden">
       <MouseEffect />
       {/* Main content */}
-      <div className="text-center px-4">
+      <div className="text-center px-2 md:px-4">
         <h1 className="heading transform-cpu effect">Fatemeh Yafteh</h1>
 
         <p className="subheading mb-4">

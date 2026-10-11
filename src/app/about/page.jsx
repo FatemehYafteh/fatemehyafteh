@@ -6,7 +6,7 @@ export const metadata = {
 
 export default function About() {
   return (
-    <section className="section px-6 py-20 max-w-3xl mx-auto" id="about">
+    <section className="section px-2 md:px-6 py-20 max-w-3xl mx-auto" id="about">
       <h2 className="heading mb-8 text-center">About Me</h2>
 
       <p className="text-secondary leading-8 mb-4">

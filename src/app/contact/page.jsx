@@ -34,7 +34,7 @@ export default function Contact() {
   ];
 
   return (
-    <section className="section max-w-6xl mx-auto px-6 py-20" id="contact">
+    <section className="section max-w-6xl mx-auto px-2 md:px-6 py-20" id="contact">
       <h2 className="heading mb-12 text-center">Contact Me</h2>
       <div className=" grid gap-8 md:grid-cols-2 lg:grid-cols-3 ">
         {contactMethods.map((item) => (

@@ -29,7 +29,7 @@ export default async function ProjectPage({ params }) {
   if (!project) notFound();
 
   return (
-    <section className="section px-6 py-20 max-w-3xl mx-auto">
+    <section className="section px-2 md:px-6 py-20 max-w-3xl mx-auto">
       <h1 className="heading mb-8 text-center">{project.title}</h1>
       <p className="text-secondary leading-8 mb-8 text-center">
         {project.longDescription ?? project.description}
