@@ -13,7 +13,7 @@ export default function HomePage() {
       <MouseEffect />
       {/* Main content */}
       <div className="text-center px-2 md:px-4">
-        <h1 className="heading transform-cpu effect">Fatemeh Yafteh</h1>
+        <h1 className="heading transform-cpu effect mb-6 md:mb-0">Fatemeh Yafteh</h1>
 
         <p className="subheading mb-4">
           {/* A frontend developer and UI designer passionate about creating
@@ -21,7 +21,7 @@ export default function HomePage() {
 
           I am a front-end developer passionate about building clean, accessible, and visually refined web applications using React, Next.js, and Tailwind CSS.
         </p>
-        <p className="subheading mb-6">
+        <p className="subheading mb-10 md:mb-6">
         Explore my projects and skills, and feel free to get in touch!
       </p>
         <div className="flex justify-center gap-6">
