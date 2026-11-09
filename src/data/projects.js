@@ -36,6 +36,12 @@ export const projects = [
         alt: "Product table in Persian with search, category, supplier and stock filters, quick stock buttons and an Excel export button.",
       },
       {
+        src: "/projects/inventory-movements-en.webp",
+        width: 1600,
+        height: 802,
+        alt: "Stock movements page in English: a history of every stock change with date, product, type, quantity before and after, note and who made it, with filters and an Excel export.",
+      },
+      {
         src: "/projects/inventory-login-fa.webp",
         width: 1600,
         height: 794,

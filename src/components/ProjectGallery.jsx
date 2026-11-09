@@ -5,8 +5,9 @@ import { useEffect, useRef, useState } from "react";
 
 /**
  * Responsive screenshot gallery with a small lightbox built on the native
- * <dialog> element (no library). The first image is shown large and loads
- * eagerly; every other image is lazy. The lightbox image is only rendered
+ * <dialog> element (no library). Every thumbnail has the same 16:10 shape and
+ * is cropped from the top; the lightbox shows the full image. The first image
+ * loads eagerly; every other image is lazy. The lightbox image is only rendered
  * while it is open, so it costs nothing on first load.
  */
 export default function ProjectGallery({ images }) {
@@ -33,39 +34,27 @@ export default function ProjectGallery({ images }) {
 
   return (
     <>
-      <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-        {images.map((image, index) => {
-          const isPortrait = image.height > image.width;
-          const isFeatured = index === 0;
-          return (
-            <li key={image.src} className={isFeatured ? "sm:col-span-2" : ""}>
-              <button
-                type="button"
-                onClick={() => setOpenIndex(index)}
-                aria-label={`Enlarge screenshot: ${image.alt}`}
-                className="block w-full cursor-zoom-in overflow-hidden rounded-xl border border-background-lighter bg-background-light transition hover:border-accent"
-              >
-                <Image
-                  src={image.src}
-                  alt={image.alt}
-                  width={image.width}
-                  height={image.height}
-                  sizes={
-                    isFeatured
-                      ? "(min-width: 768px) 720px, 100vw"
-                      : "(min-width: 640px) 360px, 100vw"
-                  }
-                  loading={isFeatured ? "eager" : "lazy"}
-                  className={
-                    isPortrait
-                      ? "mx-auto h-72 w-auto max-w-full object-contain py-2 sm:h-64"
-                      : "h-auto w-full"
-                  }
-                />
-              </button>
-            </li>
-          );
-        })}
+      <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {images.map((image, index) => (
+          <li key={image.src}>
+            <button
+              type="button"
+              onClick={() => setOpenIndex(index)}
+              aria-label={`Enlarge screenshot: ${image.alt}`}
+              className="block w-full cursor-zoom-in overflow-hidden rounded-xl border border-background-lighter bg-background-light transition hover:border-accent"
+            >
+              <Image
+                src={image.src}
+                alt={image.alt}
+                width={image.width}
+                height={image.height}
+                sizes="(min-width: 1024px) 330px, (min-width: 640px) 340px, 100vw"
+                loading={index === 0 ? "eager" : "lazy"}
+                className="aspect-[16/10] h-auto w-full object-cover object-top"
+              />
+            </button>
+          </li>
+        ))}
       </ul>
 
       {isOpen && (

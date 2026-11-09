@@ -70,8 +70,9 @@ export default async function ProjectPage({ params }) {
         </Link>
       </div>
       {project.demo && <DemoLogin login={project.demoLogin} className="mt-6 text-center" />}
+      {/* The gallery is wider than the text column on large screens, so thumbnails are bigger. */}
       {project.images?.length > 0 && (
-        <div className="mt-16 w-full">
+        <div className="mt-16 w-full lg:w-[min(64rem,calc(100vw-4rem))] lg:max-w-none">
           <h2 className="mb-6 text-center text-2xl font-bold md:text-3xl">Screenshots</h2>
           <ProjectGallery images={project.images} />
         </div>
