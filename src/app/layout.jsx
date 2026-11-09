@@ -1,4 +1,5 @@
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next";
 import Footer from "@/components/Footer";
 import MouseEffect from "@/components/MouseEffect";
 import Nav from "@/components/Nav";
@@ -25,6 +26,7 @@ export default function RootLayout({ children }) {
         <Nav />
         <main className="relative z-10 container mx-auto flex-1 px-4 pt-20">{children}</main>
         <Footer />
+        <Analytics />
       </body>
     </html>
   );

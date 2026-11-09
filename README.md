@@ -104,6 +104,10 @@ page, gets its own page at `/projects/<slug>`, and is added to the sitemap autom
 
 The site is deployed on Vercel. Pushing to the `main` branch triggers a new deployment.
 
+[Vercel Web Analytics](https://vercel.com/docs/analytics) counts page views. The `<Analytics />` component is in
+`src/app/layout.jsx`; it only sends data once Web Analytics is enabled in the Vercel project (Analytics tab)
+and does nothing when running locally.
+
 ## Contact
 
 - Email: fatemmehyafteh@gmail.com
