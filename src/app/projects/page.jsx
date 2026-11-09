@@ -1,5 +1,6 @@
 import Link from "next/link";
 import DemoLogin from "@/components/DemoLogin";
+import { buttonRow, outlineButton, primaryButton } from "@/lib/buttons";
 import { projects } from "@/data/projects";
 
 export const metadata = {
@@ -24,11 +25,8 @@ export default function ProjectsPage() {
                 </li>
               ))}
             </ul>
-            <div className="flex flex-wrap gap-4">
-              <Link
-                href={`/projects/${project.slug}`}
-                className="btn-primary border border-transparent text-center"
-              >
+            <div className={buttonRow}>
+              <Link href={`/projects/${project.slug}`} className={primaryButton}>
                 View Project
               </Link>
               {project.demo && (
@@ -36,7 +34,7 @@ export default function ProjectsPage() {
                   href={project.demo}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn-outline text-center"
+                  className={outlineButton}
                 >
                   {project.demoLabel ?? "Live demo"}
                 </a>

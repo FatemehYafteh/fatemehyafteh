@@ -1,5 +1,6 @@
 import Link from "next/link";
 import DemoLogin from "@/components/DemoLogin";
+import { buttonRow, outlineButton, primaryButton } from "@/lib/buttons";
 import { notFound } from "next/navigation";
 import { projects } from "@/data/projects";
 
@@ -42,13 +43,13 @@ export default async function ProjectPage({ params }) {
           </li>
         ))}
       </ul>
-      <div className="flex flex-wrap justify-center gap-6">
+      <div className={`${buttonRow} sm:justify-center`}>
         {project.demo && (
           <a
             href={project.demo}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-primary border border-transparent"
+            className={primaryButton}
           >
             {project.demoLabel ?? "Live demo"}
           </a>
@@ -58,12 +59,12 @@ export default async function ProjectPage({ params }) {
             href={project.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-outline"
+            className={outlineButton}
           >
             View on GitHub
           </a>
         )}
-        <Link href="/projects" className="btn-outline">
+        <Link href="/projects" className={outlineButton}>
           Back to projects
         </Link>
       </div>

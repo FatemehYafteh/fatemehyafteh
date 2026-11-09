@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { buttonRow, outlineButton, primaryButton } from "@/lib/buttons";
 
 export default function ErrorPage({ reset }) {
   return (
@@ -9,15 +10,11 @@ export default function ErrorPage({ reset }) {
       <p className="text-secondary mb-10 text-center leading-8">
         An unexpected error happened. You can try again, or go back to the home page.
       </p>
-      <div className="flex flex-wrap justify-center gap-6">
-        <button
-          type="button"
-          onClick={() => reset()}
-          className="btn-primary border border-transparent font-semibold"
-        >
+      <div className={`${buttonRow} sm:justify-center`}>
+        <button type="button" onClick={() => reset()} className={primaryButton}>
           Try again
         </button>
-        <Link href="/" className="btn-outline font-semibold">
+        <Link href="/" className={outlineButton}>
           Back to home
         </Link>
       </div>

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { buttonRow, outlineButton, primaryButton } from "@/lib/buttons";
 
 export const metadata = {
   title: "Page not found",
@@ -17,11 +18,11 @@ export default function NotFound() {
       <p className="text-secondary mb-10 text-center leading-8">
         The page you are looking for does not exist or may have been moved.
       </p>
-      <div className="flex flex-wrap justify-center gap-6">
-        <Link href="/" className="btn-primary border border-transparent font-semibold">
+      <div className={`${buttonRow} sm:justify-center`}>
+        <Link href="/" className={primaryButton}>
           Back to home
         </Link>
-        <Link href="/projects" className="btn-outline font-semibold">
+        <Link href="/projects" className={outlineButton}>
           View projects
         </Link>
       </div>

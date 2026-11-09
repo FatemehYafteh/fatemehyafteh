@@ -95,7 +95,7 @@
 
   /* دکمه‌ها */
   .btn-primary {
-    @apply rounded-lg px-6 py-3 font-semibold shadow-lg;
+    @apply rounded-lg px-6 py-3 font-bold shadow-lg;
     background-color: var(--color-accent);
     color: var(--color-background);
   }
