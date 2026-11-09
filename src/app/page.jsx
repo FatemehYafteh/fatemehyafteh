@@ -1,4 +1,3 @@
-import MouseEffect from "@/components/MouseEffect";
 import Link from "next/link";
 
 export const metadata = {
@@ -10,7 +9,6 @@ export const metadata = {
 export default function HomePage() {
   return (
     <div className="section relative overflow-hidden">
-      <MouseEffect />
       {/* Main content */}
       <div className="px-2 text-center md:px-4">
         <h1 className="heading effect mb-6 transform-cpu md:mb-0">Fatemeh Yafteh</h1>
