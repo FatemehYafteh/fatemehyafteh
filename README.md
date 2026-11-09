@@ -59,11 +59,22 @@ src/
   components/
     Nav.jsx                  Navigation bar and mobile menu
     MouseEffect.jsx          Mouse glow effect (desktop only)
+    CvButtons.jsx            CV download buttons (Home and About)
   data/
     projects.js              Project content
   lib/
-    site.js                  Site URL and name
+    site.js                  Site URL, repo URL and CV file list
+    buttons.js               Shared button layout and styles
+public/
+  Fatemeh-Yafteh-CV-EN.pdf   CV in English
+  Fatemeh-Yafteh-CV-FA.pdf   CV in Persian
 ```
+
+## Updating the CV
+
+Replace the two PDF files in `public/` and keep the same file names. The download buttons on the Home
+and About pages link to them, so no code change is needed. To change the button labels or file names,
+edit `cvFiles` in `src/lib/site.js`.
 
 ## Adding a project
 

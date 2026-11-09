@@ -1,4 +1,5 @@
 import Link from "next/link";
+import CvButtons from "@/components/CvButtons";
 
 export const metadata = {
   title: { absolute: "Fatemeh - Front-end Developer" },
@@ -29,6 +30,7 @@ export default function HomePage() {
             Contact Me
           </Link>
         </div>
+        <CvButtons className="mt-6" />
       </div>
     </div>
   );

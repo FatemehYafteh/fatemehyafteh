@@ -1,3 +1,5 @@
+import CvButtons from "@/components/CvButtons";
+
 export const metadata = {
   title: "About Me",
   description:
@@ -18,6 +20,8 @@ export default function About() {
         When I&apos;m not coding, I enjoy learning new tools, finding design inspiration, going to
         the gym, and spending quality time with my family.
       </p>
+
+      <CvButtons className="mt-10" />
     </section>
   );
 }

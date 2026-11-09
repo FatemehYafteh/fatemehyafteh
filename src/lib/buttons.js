@@ -7,3 +7,6 @@ const buttonBase = "w-full border text-center sm:w-44";
 
 export const primaryButton = `btn-primary ${buttonBase} border-transparent font-bold`;
 export const outlineButton = `btn-outline ${buttonBase} font-semibold`;
+
+// The CV download buttons have longer labels, so they share a wider size.
+export const cvButton = `btn-outline ${"w-full border text-center font-semibold sm:w-56"}`;
