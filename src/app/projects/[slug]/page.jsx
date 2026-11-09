@@ -1,4 +1,5 @@
 import Link from "next/link";
+import DemoLogin from "@/components/DemoLogin";
 import { notFound } from "next/navigation";
 import { projects } from "@/data/projects";
 
@@ -42,12 +43,22 @@ export default async function ProjectPage({ params }) {
         ))}
       </ul>
       <div className="flex flex-wrap justify-center gap-6">
+        {project.demo && (
+          <a
+            href={project.demo}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary border border-transparent"
+          >
+            Live demo
+          </a>
+        )}
         {project.github && (
           <a
             href={project.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-primary"
+            className="btn-outline"
           >
             View on GitHub
           </a>
@@ -56,6 +67,7 @@ export default async function ProjectPage({ params }) {
           Back to projects
         </Link>
       </div>
+      {project.demo && <DemoLogin login={project.demoLogin} className="mt-6 text-center" />}
     </section>
   );
 }
