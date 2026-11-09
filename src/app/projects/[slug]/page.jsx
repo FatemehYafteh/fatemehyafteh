@@ -1,5 +1,6 @@
 import Link from "next/link";
 import DemoLogin from "@/components/DemoLogin";
+import ProjectGallery from "@/components/ProjectGallery";
 import { buttonRow, outlineButton, primaryButton } from "@/lib/buttons";
 import { notFound } from "next/navigation";
 import { projects } from "@/data/projects";
@@ -69,6 +70,12 @@ export default async function ProjectPage({ params }) {
         </Link>
       </div>
       {project.demo && <DemoLogin login={project.demoLogin} className="mt-6 text-center" />}
+      {project.images?.length > 0 && (
+        <div className="mt-16 w-full">
+          <h2 className="mb-6 text-center text-2xl font-bold md:text-3xl">Screenshots</h2>
+          <ProjectGallery images={project.images} />
+        </div>
+      )}
     </section>
   );
 }

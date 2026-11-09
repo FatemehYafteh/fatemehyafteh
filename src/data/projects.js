@@ -22,6 +22,38 @@ export const projects = [
     github: "https://github.com/FatemehYafteh/Inventory-App",
     demo: "https://inventory-app-drab-tau.vercel.app",
     demoLogin: { email: "admin@example.com", password: "inventory-demo-2026" },
+    images: [
+      {
+        src: "/projects/inventory-dashboard-dark-fa.webp",
+        width: 1600,
+        height: 802,
+        alt: "Inventory Manager dashboard in dark theme and Persian, with stock summary cards, latest stock movements and a reorder list.",
+      },
+      {
+        src: "/projects/inventory-products-fa.webp",
+        width: 1600,
+        height: 798,
+        alt: "Product table in Persian with search, category, supplier and stock filters, quick stock buttons and an Excel export button.",
+      },
+      {
+        src: "/projects/inventory-login-fa.webp",
+        width: 1600,
+        height: 794,
+        alt: "Sign-in page in Persian with email and Telegram options and a demo account box.",
+      },
+      {
+        src: "/projects/inventory-users-en.webp",
+        width: 1600,
+        height: 795,
+        alt: "Users page in English with pending, active and rejected tabs and approve and reject buttons.",
+      },
+      {
+        src: "/projects/inventory-categories-mobile.webp",
+        width: 359,
+        height: 639,
+        alt: "Categories page on a phone, where the table layout becomes a list of cards.",
+      },
+    ],
   },
   {
     id: 2,
@@ -35,5 +67,13 @@ export const projects = [
     github: "https://github.com/FatemehYafteh/fatemehyafteh",
     demo: "https://fatemehyafteh.vercel.app",
     demoLabel: "Live site",
+    images: [
+      {
+        src: "/projects/portfolio-home.webp",
+        width: 1600,
+        height: 725,
+        alt: "Home page of this portfolio with the name, a short introduction and the View Projects and Contact Me buttons on a dark blue background.",
+      },
+    ],
   },
 ];
