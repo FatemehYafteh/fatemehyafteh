@@ -9,13 +9,13 @@ export const metadata = {
 
 export default function ProjectsPage() {
   return (
-    <div className="section px-2 md:px-6 max-w-5xl mx-auto">
-      <h1 className="heading text-center mb-12">My Projects</h1>
+    <div className="section mx-auto max-w-5xl px-2 md:px-6">
+      <h1 className="heading mb-12 text-center">My Projects</h1>
       <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-        {projects.map(project => (
-          <div key={project.id} className="card hover:shadow-xl transition">
-            <h3 className="text-xl font-bold  mb-3">{project.title}</h3>
-            <p className="text-secondary ">{project.description}</p>
+        {projects.map((project) => (
+          <div key={project.id} className="card transition hover:shadow-xl">
+            <h3 className="mb-3 text-xl font-bold">{project.title}</h3>
+            <p className="text-secondary">{project.description}</p>
             <Link href={`/projects/${project.slug}`} className="btn-primary mt-6 block text-center">
               View Project
             </Link>

@@ -4,8 +4,7 @@ import { FaGithub } from "react-icons/fa";
 
 export const metadata = {
   title: "Contact",
-  description:
-    "Get in touch with Fatemeh, a front-end developer specialized in React and Next.js.",
+  description: "Get in touch with Fatemeh, a front-end developer specialized in React and Next.js.",
 };
 
 export default function Contact() {
@@ -15,14 +14,14 @@ export default function Contact() {
       type: "Email",
       value: "fatemmehyafteh@gmail.com",
       link: "mailto:fatemmehyafteh@gmail.com",
-      icon:<HiOutlineMail />,
+      icon: <HiOutlineMail />,
     },
     {
       id: 2,
       type: "LinkedIn",
       value: "linkedin.com/in/fatemeh-yafteh",
       link: "https://www.linkedin.com/in/fatemeh-yafteh",
-      icon:  <LuLinkedin />,
+      icon: <LuLinkedin />,
     },
     {
       id: 3,
@@ -34,9 +33,9 @@ export default function Contact() {
   ];
 
   return (
-    <section className="section max-w-6xl mx-auto px-2 md:px-6 py-10 md:py-20" id="contact">
+    <section className="section mx-auto max-w-6xl px-2 py-10 md:px-6 md:py-20" id="contact">
       <h2 className="heading mb-12 text-center">Contact Me</h2>
-      <div className=" grid gap-8 lg:grid-cols-3 ">
+      <div className="grid gap-8 lg:grid-cols-3">
         {contactMethods.map((item) => (
           <a
             key={item.id}
@@ -44,11 +43,11 @@ export default function Contact() {
             {...(item.link.startsWith("http")
               ? { target: "_blank", rel: "noopener noreferrer" }
               : {})}
-            className="card max-md:p-4! effect hover:shadow-xl transition flex flex-col items-center justify-center text-center"
+            className="card effect flex flex-col items-center justify-center text-center transition hover:shadow-xl max-md:p-4!"
           >
-            <h3 className="text-xl font-bold mb-2">{item.type}</h3>
+            <h3 className="mb-2 text-xl font-bold">{item.type}</h3>
             <div className="flex gap-1.5">
-              <p className="text-xl shrink-0">{item.icon}</p>
+              <p className="shrink-0 text-xl">{item.icon}</p>
               <p className="text-secondary min-w-0 wrap-anywhere">{item.value}</p>
             </div>
           </a>

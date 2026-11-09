@@ -12,18 +12,19 @@ export default function HomePage() {
     <div className="section relative overflow-hidden">
       <MouseEffect />
       {/* Main content */}
-      <div className="text-center px-2 md:px-4">
-        <h1 className="heading transform-cpu effect mb-6 md:mb-0">Fatemeh Yafteh</h1>
+      <div className="px-2 text-center md:px-4">
+        <h1 className="heading effect mb-6 transform-cpu md:mb-0">Fatemeh Yafteh</h1>
 
         <p className="subheading mb-4">
-          I am a front-end developer passionate about building clean, accessible, and visually refined web applications using React, Next.js, and Tailwind CSS.
+          I am a front-end developer passionate about building clean, accessible, and visually
+          refined web applications using React, Next.js, and Tailwind CSS.
         </p>
         <p className="subheading mb-10 md:mb-6">
-        Explore my projects and skills, and feel free to get in touch!
-      </p>
+          Explore my projects and skills, and feel free to get in touch!
+        </p>
         <div className="flex flex-wrap justify-center gap-6">
           {/* Same width, and a transparent border so both buttons match the outline button's height */}
-          <Link href="/projects" className="btn-primary w-38 text-center border border-transparent">
+          <Link href="/projects" className="btn-primary w-38 border border-transparent text-center">
             View Projects
           </Link>
           <Link href="/contact" className="btn-outline w-38 text-center">

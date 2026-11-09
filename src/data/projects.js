@@ -7,7 +7,15 @@ export const projects = [
       "A freelance marketplace where project owners post jobs and freelancers send proposals, with separate dashboards for admins, owners, and freelancers.",
     longDescription:
       "A React 19 single-page app with OTP-based authentication and profile completion, plus a dashboard for each role: owners create and manage projects, freelancers browse projects and submit proposals, and admins manage users. Server data is fetched and cached with TanStack Query, and forms are built with React Hook Form.",
-    tech: ["React", "React Router", "TanStack Query", "React Hook Form", "Tailwind CSS", "Axios", "Vite"],
+    tech: [
+      "React",
+      "React Router",
+      "TanStack Query",
+      "React Hook Form",
+      "Tailwind CSS",
+      "Axios",
+      "Vite",
+    ],
     github: "https://github.com/FatemehYafteh/FREELANCERY",
   },
   {
@@ -25,7 +33,8 @@ export const projects = [
     id: 3,
     title: "Rick and Morty Character Explorer",
     slug: "rick-and-morty",
-    description: "A character browser for Rick and Morty, with a character list and a detail panel.",
+    description:
+      "A character browser for Rick and Morty, with a character list and a detail panel.",
     tech: ["React", "Vite", "CSS"],
     github: "https://github.com/FatemehYafteh/Rick-and-morty",
   },

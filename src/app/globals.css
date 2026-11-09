@@ -43,27 +43,49 @@
 /* ---------------- 💎 کلاس‌های utility سفارشی ---------------- */
 @layer utilities {
   /* پس‌زمینه */
-  .bg-background { background-color: var(--color-background); }
-  .bg-background-light { background-color: var(--color-background-light); }
-  .bg-background-lighter { background-color: var(--color-background-lighter); }
-  .bg-background-dark { background-color: var(--color-background-dark); }
+  .bg-background {
+    background-color: var(--color-background);
+  }
+  .bg-background-light {
+    background-color: var(--color-background-light);
+  }
+  .bg-background-lighter {
+    background-color: var(--color-background-lighter);
+  }
+  .bg-background-dark {
+    background-color: var(--color-background-dark);
+  }
 
   /* متن */
-  .text-primary { color: var(--color-text-primary); }
-  .text-secondary { color: var(--color-text-secondary); }
-  .text-dim { color: var(--color-text-dim); }
+  .text-primary {
+    color: var(--color-text-primary);
+  }
+  .text-secondary {
+    color: var(--color-text-secondary);
+  }
+  .text-dim {
+    color: var(--color-text-dim);
+  }
 
   /* کادر / border */
-  .border-accent { border-color: var(--color-accent); }
+  .border-accent {
+    border-color: var(--color-accent);
+  }
 
   /* افکت hover */
-  .hover-bg-accent:hover { background-color: var(--color-accent); }
-  .hover-bg-accent-hover:hover { background-color: var(--color-accent-hover); }
-  .hover-border-accent-hover:hover { border-color: var(--color-accent-hover); }
+  .hover-bg-accent:hover {
+    background-color: var(--color-accent);
+  }
+  .hover-bg-accent-hover:hover {
+    background-color: var(--color-accent-hover);
+  }
+  .hover-border-accent-hover:hover {
+    border-color: var(--color-accent-hover);
+  }
 
   /* دکمه‌ها */
   .btn-primary {
-    @apply px-6 py-3 rounded-lg font-semibold shadow-lg;
+    @apply rounded-lg px-6 py-3 font-semibold shadow-lg;
     background-color: var(--color-accent);
     color: var(--color-background);
   }
@@ -72,7 +94,7 @@
   }
 
   .btn-outline {
-    @apply px-6 py-3 rounded-lg font-semibold border;
+    @apply rounded-lg border px-6 py-3 font-semibold;
     border-color: var(--color-accent);
     color: var(--color-accent);
   }
@@ -83,7 +105,7 @@
 
   /* کارت‌ها */
   .card {
-    @apply rounded-2xl p-6 shadow-lg transition ;
+    @apply rounded-2xl p-6 shadow-lg transition;
     background-color: var(--color-background-light);
   }
   .card:hover {
@@ -93,24 +115,24 @@
 
   /* سکشن اصلی */
   .section {
-    @apply relative mt-12 md:mt-32 flex flex-col items-center justify-center ;
+    @apply relative mt-12 flex flex-col items-center justify-center md:mt-32;
     background-color: var(--color-background);
     /* color: var(--color-text-primary); */
   }
 
   /* تیترها */
   .heading {
-    @apply text-4xl md:text-6xl font-bold hover:text-accent;
+    @apply text-4xl font-bold hover:text-accent md:text-6xl;
     /* color: var(--color-primary); */
   }
 
   .subheading {
-    @apply text-xl md:text-2xl max-w-xl mx-auto;
+    @apply mx-auto max-w-xl text-xl md:text-2xl;
     color: var(--color-text-secondary);
   }
 }
 .effect {
-  @apply transition-transform duration-300 hover:ease-out hover:scale-103 hover:text-accent;
+  @apply transition-transform duration-300 hover:scale-103 hover:text-accent hover:ease-out;
 }
 @keyframes slideDown {
   from {
@@ -126,4 +148,3 @@
 .animate-slideDown {
   animation: slideDown 0.25s ease-out;
 }
-

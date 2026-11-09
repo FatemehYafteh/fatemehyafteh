@@ -6,12 +6,11 @@ export default function MouseEffect() {
   const [isDesktop, setIsDesktop] = useState(false);
 
   useEffect(() => {
-   
     const checkDesktop = () => {
-      setIsDesktop(window.innerWidth >= 1024);  
+      setIsDesktop(window.innerWidth >= 1024);
     };
 
-    checkDesktop(); 
+    checkDesktop();
     window.addEventListener("resize", checkDesktop);
 
     return () => window.removeEventListener("resize", checkDesktop);

@@ -33,24 +33,27 @@ export default function Nav() {
 
   return (
     <nav
-      className="fixed top-0 left-0 w-full z-20 shadow-[0_1px_15px_rgba(255,255,255,0.1)]"
+      className="fixed top-0 left-0 z-20 w-full shadow-[0_1px_15px_rgba(255,255,255,0.1)]"
       aria-label="Primary navigation"
     >
       {/* Blur lives on its own layer: backdrop-filter on <nav> would trap the fixed overlay inside the nav bar */}
-      <div className="absolute inset-0 -z-10 bg-background/30 backdrop-blur-sm" aria-hidden="true" />
+      <div
+        className="absolute inset-0 -z-10 bg-background/30 backdrop-blur-sm"
+        aria-hidden="true"
+      />
 
-      <div className="relative z-50 max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-        <Link href="/" className="font-bold text-2xl transition-all duration-300 hover:text-accent">
+      <div className="relative z-50 mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+        <Link href="/" className="text-2xl font-bold transition-all duration-300 hover:text-accent">
           Fatemeh Yafteh
         </Link>
 
         {/* Desktop Menu */}
-        <ul className="hidden md:flex gap-8">
+        <ul className="hidden gap-8 md:flex">
           {navItems.map((item) => (
             <li key={item.name}>
               <Link
                 href={item.href}
-                className="text-(--color-text-primary) hover:text-accent transition font-medium focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--color-accent)"
+                className="font-medium text-(--color-text-primary) transition hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--color-accent)"
               >
                 {item.name}
               </Link>
@@ -60,7 +63,7 @@ export default function Nav() {
 
         {/* Mobile Hamburger */}
         <button
-          className="md:hidden -m-2 p-2 min-w-11 min-h-11 flex items-center justify-center text-2xl text-(--color-accent) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--color-accent)"
+          className="-m-2 flex min-h-11 min-w-11 items-center justify-center p-2 text-2xl text-(--color-accent) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--color-accent) md:hidden"
           onClick={() => setIsOpen((s) => !s)}
           aria-controls="mobile-menu"
           aria-expanded={isOpen}
@@ -69,40 +72,32 @@ export default function Nav() {
           {isOpen ? "✖" : "☰"}
         </button>
       </div>
-     {/* Mobile Menu */}
-{isOpen && (
-  <div id="mobile-menu" role="dialog" aria-modal="true" className="md:hidden">
-    {/* Overlay */}
-    <div
-      className="fixed inset-0 backdrop-blur-[2px] bg-black/30 z-40"
-      onClick={() => setIsOpen(false)}
-      aria-hidden="true"
-    />
-
-    {/* Menu */}
-    <ul
-      className="
-        absolute top-full left-0 right-0 
-        bg-(--color-background) 
-        text-center pb-4 z-50 shadow-xl
-        animate-slideDown
-      "
-    >
-      {navItems.map((item) => (
-        <li key={item.name}>
-          <Link
-            href={item.href}
-            className="block w-full py-3 text-(--color-text-primary) hover:text-accent transition font-medium text-lg"
+      {/* Mobile Menu */}
+      {isOpen && (
+        <div id="mobile-menu" role="dialog" aria-modal="true" className="md:hidden">
+          {/* Overlay */}
+          <div
+            className="fixed inset-0 z-40 bg-black/30 backdrop-blur-[2px]"
             onClick={() => setIsOpen(false)}
-          >
-            {item.name}
-          </Link>
-        </li>
-      ))}
-    </ul>
-  </div>
-)}
+            aria-hidden="true"
+          />
 
+          {/* Menu */}
+          <ul className="animate-slideDown absolute top-full right-0 left-0 z-50 bg-(--color-background) pb-4 text-center shadow-xl">
+            {navItems.map((item) => (
+              <li key={item.name}>
+                <Link
+                  href={item.href}
+                  className="block w-full py-3 text-lg font-medium text-(--color-text-primary) transition hover:text-accent"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {item.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </nav>
   );
 }

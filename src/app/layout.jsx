@@ -1,4 +1,3 @@
-
 import "./globals.css";
 import Nav from "@/components/Nav";
 
@@ -14,9 +13,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="bg-(--color-background) text-(--color-text-primary) font-sans antialiased relative min-h-screen overflow-x-hidden">
+      <body className="relative min-h-screen overflow-x-hidden bg-(--color-background) font-sans text-(--color-text-primary) antialiased">
         <Nav />
-        <main className="relative z-10 pt-20 container mx-auto px-4">{children}</main>
+        <main className="relative z-10 container mx-auto px-4 pt-20">{children}</main>
       </body>
     </html>
   );
