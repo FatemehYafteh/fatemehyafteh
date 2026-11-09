@@ -16,6 +16,7 @@ export const projects = [
         "Building sortable, filterable tables with TanStack Table that still work well on small screens.",
       ],
       learned: [
+        "How to design a UI that works the same in two languages and two directions.",
         "How to manage server state and caching instead of keeping everything in local state.",
         "How to make data-heavy screens usable on mobile.",
       ],
@@ -81,6 +82,8 @@ export const projects = [
     description:
       "My own portfolio site, built with Next.js and Tailwind CSS: responsive, accessible, with security headers and share previews.",
     sections: {
+      problem:
+        "Employers and clients need a quick, clear way to see who I am, what I can build, and how to reach me.",
       built:
         "This website is built with Next.js (App Router) and Tailwind CSS. The layout is responsive from phone to desktop. A soft mouse-glow effect follows the cursor on desktop screens and is switched off for visitors who prefer reduced motion. Accessibility work includes a visible keyboard focus style and a mobile menu with labels that closes with the Escape key. For search and sharing it has page titles and descriptions, canonical links, a sitemap and robots file, and Open Graph and Twitter tags with a generated share image. Security headers are set in the Next.js config, and there are custom 404 and error pages. The site is deployed on Vercel. I designed this website and built the first version myself. Later improvements were made with Claude Code (AI), under my direction and review.",
     },
