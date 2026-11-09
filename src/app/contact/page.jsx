@@ -41,8 +41,9 @@ export default function Contact() {
           <a
             key={item.id}
             href={item.link}
-            target="_blank"
-            rel="noopener noreferrer"
+            {...(item.link.startsWith("http")
+              ? { target: "_blank", rel: "noopener noreferrer" }
+              : {})}
             className="card max-md:p-4! effect hover:shadow-xl transition flex flex-col items-center justify-center text-center"
           >
             <h3 className="text-xl font-bold mb-2">{item.type}</h3>
