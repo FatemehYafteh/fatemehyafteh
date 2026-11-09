@@ -70,7 +70,7 @@ page, gets its own page at `/projects/<slug>`, and is added to the sitemap autom
 
 ```js
 {
-  id: 5,
+  id: 2,
   title: "My New Project",
   slug: "my-new-project",
   description: "One or two sentences shown on the project card.",

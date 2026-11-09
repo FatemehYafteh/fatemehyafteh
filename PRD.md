@@ -22,7 +22,7 @@ The live site could not be checked, because no URL has been shared. There is als
 - `react-icons`
 - Static pages with no database, no API routes and no environment variables
 
-**What exists today:** 5 routes: Home, Projects, a project page (`/projects/[slug]`, 4 projects), About and Contact. There is a nav bar with a mobile menu, a mouse-glow effect on Home, and three contact links (email, LinkedIn, GitHub).
+**What exists today:** 5 routes: Home, Projects, a project page (`/projects/[slug]`, 1 project: Inventory Manager), About and Contact. There is a nav bar with a mobile menu, a mouse-glow effect on Home, and three contact links (email, LinkedIn, GitHub).
 
 ## 2. Problem
 
@@ -40,7 +40,7 @@ A hiring manager or client opens the site, and within about a minute decides whe
 
 ### MVP (must have)
 1. **Home** (exists): a clear value line, availability line, two calls to action.
-2. **Projects list** (exists): cards with an image, a short summary and links.
+2. **Projects list** (exists): a featured card for the single project (Inventory Manager) with its summary, tech tags and links.
 3. **Project detail** (exists): the full case study.
 4. **About** (exists, too generic): level, location, time zone, availability, photo, CV link.
 5. **Contact** (exists): email, LinkedIn, GitHub, plus CV download.
@@ -68,10 +68,10 @@ A hiring manager or client opens the site, and within about a minute decides whe
 - The mouse-glow effect must not slow interaction (R4): no React state update per `mousemove`; it is off on touch devices and when `prefers-reduced-motion` is set.
 
 ### 5.2 Projects list
-- Each card shows: image, title, one-sentence summary, tech tags, and a View Project button. The card may also show a Live Demo link.
+- Each card shows: title, one-sentence summary, tech tags, and a View Project button. It also shows a Live Demo link and, under it, a demo login (email and password) so visitors can sign in. An image is added in Milestone 3.
 - **Acceptance:**
   - Cards render for all projects in `src/data/projects.js`.
-  - Layout is 1 column on mobile, 2 on tablet, 3 on desktop.
+  - Cards are shown one per row, centred, so a single project looks intentional and works for more later.
   - A card with no image shows a neutral placeholder, not a broken icon.
   - Each card is reachable and activatable by keyboard.
 
@@ -136,7 +136,7 @@ A hiring manager or client opens the site, and within about a minute decides whe
 | `github` | Yes (public work) | Repository URL |
 | `highlights` | Optional | 2-4 bullet outcomes |
 
-**Gap today:** none of the four projects has `images`, `demo`, `problem`, `role` or `highlights`. Rick and Morty has no `longDescription`.
+**Gap today:** the one project (Inventory Manager) has a `demo` link, a `demoLogin` and a `longDescription`, but no `images`, `problem`, `role` or `highlights`.
 
 ### Page content summary
 - **Home:** name, role, value line, availability, 2 calls to action.
@@ -202,7 +202,7 @@ No analytics exist yet, so the first milestone sets the baseline; targets come a
 
 **Assumptions**
 - Content (CV, photo, screenshots, write-ups) will be provided by Fatemeh.
-- The four existing projects remain the showcase; new front-end projects are added over time.
+- Inventory Manager is the only project shown for now (the earlier four were removed on 2026-11-09); more front-end projects can be added later.
 - The audience reads English.
 
 **Risks**
@@ -215,7 +215,7 @@ No analytics exist yet, so the first milestone sets the baseline; targets come a
 1. What is the live URL and where is it hosted?
 2. Which roles and countries are you targeting, and what time zone are you in?
 3. Is Telegram or WhatsApp a contact channel for Iranian clients?
-4. Are live demos available for all four projects?
+4. Is the Inventory Manager demo login (an admin account whose password is shown publicly on the app login page) safe to keep, and does the demo stay reachable?
 5. Do you want a Persian version?
 6. Do you have any client work or testimonials that can be shown?
 
@@ -227,7 +227,7 @@ Each milestone ends with lint and build passing, then a review before the next o
 |---|---|---|---|
 | **1** | **Fix the review findings** | Upgrade Next.js, run `npm audit fix` (R1); focus styles (R2); `mailto` link fix (R5); security headers (R8); delete leftover SVGs, run Prettier, remove commented code (R6, R13) | Audit clean; keyboard focus visible; build passes |
 | **2** | **Make it shareable** | `metadataBase`, Open Graph image, robots, sitemap (R10); custom 404 and error pages (R15); real README (R14); CV download | Link previews work; CV downloads |
-| **3** | **Prove the work** | New project data fields; screenshots, demos, problem/solution/role for all projects (R11, R12); rewrite About and Home availability lines (R16) | Every project meets section 6 |
+| **3** | **Prove the work** | New project data fields; screenshots and problem/solution/role for the Inventory Manager project (R11, R12); rewrite About and Home availability lines (R16) | Every project meets section 6 |
 | **4** | **Measure and harden** | Analytics events; CI with lint, build and audit; Dependabot; Lighthouse pass; mobile menu focus handling (R3); mouse-effect performance and reduced-motion (R4) | Metrics visible; CI green; scores met |
 | **5** | **Later** | Skills section, Persian version, JSON-LD, TypeScript | By decision after seeing the metrics |
 
