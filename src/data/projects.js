@@ -5,8 +5,19 @@ export const projects = [
     slug: "inventory-manager",
     description:
       "A stock management web app with a dashboard, product catalog, stock movement history and an admin area. This project focuses on the React front end, in English and Persian.",
-    longDescription:
-      "The front end is a React app built with Vite and Tailwind CSS. It has a dashboard with stock summaries and a low-stock list, searchable and filterable tables for products, categories, suppliers and stock movements with CSV export, and an admin page for approving users. Data is fetched and cached with TanStack Query, the tables use TanStack Table with server-side sorting and pagination, and forms use React Hook Form with Zod validation shared with the API. The interface works in English and Persian, including right-to-left layout. The repository also contains the Node.js API the app talks to; this project focuses on the front end.",
+    sections: {
+      problem:
+        "Small businesses often track stock in spreadsheets or on paper. Counts drift, nobody knows who changed what, and items run out without warning.",
+      built:
+        "Anbar is a bilingual (Persian and English) inventory web app. It has a dashboard with stock value, low-stock and out-of-stock alerts, and a reorder list; a searchable, filterable product table with quick stock changes and Excel export; a full movement history showing who changed what, when and why; categories, suppliers, and user management with roles and approvals; sign-in by email or Telegram; light and dark themes; and a responsive layout where tables become cards on mobile.",
+      challenges: [
+        "Full right-to-left and left-to-right switching, including Persian numbers and Jalali dates.",
+        "Keeping the UI in sync with the server after every stock change, using TanStack Query.",
+        "Building sortable, filterable tables with TanStack Table that still work well on small screens.",
+      ],
+      // "What I learned" is shown when this field has text.
+      learned: "",
+    },
     tech: [
       "React",
       "Vite",
