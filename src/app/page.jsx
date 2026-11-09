@@ -16,9 +16,6 @@ export default function HomePage() {
         <h1 className="heading transform-cpu effect mb-6 md:mb-0">Fatemeh Yafteh</h1>
 
         <p className="subheading mb-4">
-          {/* A frontend developer and UI designer passionate about creating
-          modern and engaging digital experiences. */}
-
           I am a front-end developer passionate about building clean, accessible, and visually refined web applications using React, Next.js, and Tailwind CSS.
         </p>
         <p className="subheading mb-10 md:mb-6">
