@@ -202,7 +202,7 @@ No analytics exist yet, so the first milestone sets the baseline; targets come a
 
 **Assumptions**
 - Content (CV, photo, screenshots, write-ups) will be provided by Fatemeh.
-- Two projects are shown: Inventory Manager and Portfolio Website (the earlier four were removed on 2026-11-09); more front-end projects can be added later. The README and the Portfolio Website page state that later improvements were made with the help of Claude Code (AI), under Fatemeh's direction and review.
+- Two projects are shown: Inventory Manager and Portfolio Website (the earlier four were removed on 2026-11-09); more front-end projects can be added later. The README and the Portfolio Website page state that Fatemeh designed the site and built the first version, and that later improvements were made with Claude Code (AI), under Fatemeh's direction and review.
 - The audience reads English.
 
 **Risks**

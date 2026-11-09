@@ -5,7 +5,7 @@ about page, and ways to contact me.
 
 **Live site:** https://fatemehyafteh.vercel.app
 
-Later improvements were made with the help of Claude Code (AI), under my direction and review.
+I designed this website and built the first version myself. Later improvements were made with Claude Code (AI), under my direction and review.
 
 ## Tech stack
 
