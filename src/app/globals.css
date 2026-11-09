@@ -40,6 +40,16 @@
   }
 }
 
+/* One shared keyboard focus style for every link, button and card:
+   a 2px accent outline plus a soft accent glow. Only shown for keyboard
+   focus, not mouse clicks. It sits outside any @layer on purpose, so
+   Tailwind shadow classes (cards, buttons) cannot override the glow. */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+  box-shadow: 0 0 14px 2px color-mix(in srgb, var(--color-accent) 55%, transparent);
+}
+
 /* ---------------- 💎 کلاس‌های utility سفارشی ---------------- */
 @layer utilities {
   /* پس‌زمینه */

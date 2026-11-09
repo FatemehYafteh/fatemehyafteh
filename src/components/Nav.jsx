@@ -43,7 +43,10 @@ export default function Nav() {
       />
 
       <div className="relative z-50 mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <Link href="/" className="text-2xl font-bold transition-all duration-300 hover:text-accent">
+        <Link
+          href="/"
+          className="rounded-md text-2xl font-bold transition-all duration-300 hover:text-accent"
+        >
           Fatemeh Yafteh
         </Link>
 
@@ -53,7 +56,7 @@ export default function Nav() {
             <li key={item.name}>
               <Link
                 href={item.href}
-                className="font-medium text-(--color-text-primary) transition hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--color-accent)"
+                className="rounded-md font-medium text-(--color-text-primary) transition hover:text-accent"
               >
                 {item.name}
               </Link>
@@ -63,7 +66,7 @@ export default function Nav() {
 
         {/* Mobile Hamburger */}
         <button
-          className="-m-2 flex min-h-11 min-w-11 items-center justify-center p-2 text-2xl text-(--color-accent) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--color-accent) md:hidden"
+          className="-m-2 flex min-h-11 min-w-11 items-center justify-center rounded-md p-2 text-2xl text-(--color-accent) md:hidden"
           onClick={() => setIsOpen((s) => !s)}
           aria-controls="mobile-menu"
           aria-expanded={isOpen}
@@ -88,7 +91,7 @@ export default function Nav() {
               <li key={item.name}>
                 <Link
                   href={item.href}
-                  className="block w-full py-3 text-lg font-medium text-(--color-text-primary) transition hover:text-accent"
+                  className="block w-full rounded-md py-3 text-lg font-medium text-(--color-text-primary) transition hover:text-accent"
                   onClick={() => setIsOpen(false)}
                 >
                   {item.name}
