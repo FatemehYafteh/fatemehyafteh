@@ -38,7 +38,7 @@ export default function ProjectsPage() {
                   rel="noopener noreferrer"
                   className="btn-outline text-center"
                 >
-                  Live demo
+                  {project.demoLabel ?? "Live demo"}
                 </a>
               )}
             </div>

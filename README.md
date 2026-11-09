@@ -5,6 +5,8 @@ about page, and ways to contact me.
 
 **Live site:** https://fatemehyafteh.vercel.app
 
+Later improvements were made with the help of Claude Code (AI), under my direction and review.
+
 ## Tech stack
 
 - [Next.js](https://nextjs.org) 16 (App Router) and React 19

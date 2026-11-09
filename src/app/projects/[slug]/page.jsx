@@ -50,7 +50,7 @@ export default async function ProjectPage({ params }) {
             rel="noopener noreferrer"
             className="btn-primary border border-transparent"
           >
-            Live demo
+            {project.demoLabel ?? "Live demo"}
           </a>
         )}
         {project.github && (
