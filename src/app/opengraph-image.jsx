@@ -28,7 +28,7 @@ export default function OpengraphImage() {
           style={{
             position: "absolute",
             top: 15,
-            right: -60,
+            right: -120,
             width: 600,
             height: 600,
             borderRadius: 300,
@@ -38,11 +38,11 @@ export default function OpengraphImage() {
         <div
           style={{
             position: "absolute",
-            top: 110,
-            right: 35,
-            width: 410,
-            height: 410,
-            borderRadius: 205,
+            top: -15,
+            right: -150,
+            width: 660,
+            height: 660,
+            borderRadius: 330,
             border: `2px solid rgba(${accent}, 0.15)`,
           }}
         />
@@ -50,7 +50,7 @@ export default function OpengraphImage() {
           style={{
             position: "absolute",
             top: 155,
-            right: 80,
+            right: 20,
             width: 320,
             height: 320,
             borderRadius: 160,
@@ -73,7 +73,6 @@ export default function OpengraphImage() {
             justifyContent: "center",
             width: 200,
             height: 200,
-            marginRight: 60,
             borderRadius: 28,
             background: "#112240",
             border: "2px solid #64ffda",
