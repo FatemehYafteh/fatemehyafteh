@@ -50,7 +50,7 @@ export default function Nav() {
             <li key={item.name}>
               <Link
                 href={item.href}
-                className="text-(--color-text-primary) hover:text-accent transition font-medium focus:outline-none "
+                className="text-(--color-text-primary) hover:text-accent transition font-medium focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--color-accent)"
               >
                 {item.name}
               </Link>
@@ -60,7 +60,7 @@ export default function Nav() {
 
         {/* Mobile Hamburger */}
         <button
-          className="md:hidden -m-2 p-2 min-w-11 min-h-11 flex items-center justify-center text-2xl text-(--color-accent) focus:outline-none"
+          className="md:hidden -m-2 p-2 min-w-11 min-h-11 flex items-center justify-center text-2xl text-(--color-accent) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--color-accent)"
           onClick={() => setIsOpen((s) => !s)}
           aria-controls="mobile-menu"
           aria-expanded={isOpen}
