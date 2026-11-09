@@ -1,6 +1,7 @@
 import { HiOutlineMail } from "react-icons/hi";
 import { LuLinkedin } from "react-icons/lu";
 import { FaGithub } from "react-icons/fa";
+import CvButtons from "@/components/CvButtons";
 
 export const metadata = {
   title: "Contact",
@@ -53,6 +54,8 @@ export default function Contact() {
           </a>
         ))}
       </div>
+
+      <CvButtons className="mt-12" />
     </section>
   );
 }
