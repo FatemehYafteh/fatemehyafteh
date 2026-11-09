@@ -10,10 +10,14 @@ export default function ErrorPage({ reset }) {
         An unexpected error happened. You can try again, or go back to the home page.
       </p>
       <div className="flex flex-wrap justify-center gap-6">
-        <button type="button" onClick={() => reset()} className="btn-primary">
+        <button
+          type="button"
+          onClick={() => reset()}
+          className="btn-primary border border-transparent font-semibold"
+        >
           Try again
         </button>
-        <Link href="/" className="btn-outline">
+        <Link href="/" className="btn-outline font-semibold">
           Back to home
         </Link>
       </div>
