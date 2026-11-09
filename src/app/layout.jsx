@@ -1,4 +1,5 @@
 import "./globals.css";
+import Footer from "@/components/Footer";
 import MouseEffect from "@/components/MouseEffect";
 import Nav from "@/components/Nav";
 import { siteName, siteUrl } from "@/lib/site";
@@ -19,10 +20,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="relative min-h-screen overflow-x-hidden bg-(--color-background) font-sans text-(--color-text-primary) antialiased">
+      <body className="relative flex min-h-screen flex-col overflow-x-hidden bg-(--color-background) font-sans text-(--color-text-primary) antialiased">
         <MouseEffect />
         <Nav />
-        <main className="relative z-10 container mx-auto px-4 pt-20">{children}</main>
+        <main className="relative z-10 container mx-auto flex-1 px-4 pt-20">{children}</main>
+        <Footer />
       </body>
     </html>
   );
