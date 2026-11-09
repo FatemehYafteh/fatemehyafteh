@@ -40,10 +40,10 @@ export default async function ProjectPage({ params }) {
 
   if (!project) notFound();
 
-  const sections = project.sections;
+  const sections = project.sections ?? { built: project.description };
 
   const tags = (
-    <ul className={`${sections ? "mt-12" : ""}mb-10 flex flex-wrap justify-center gap-2`}>
+    <ul className="mt-12 mb-10 flex flex-wrap justify-center gap-2">
       {project.tech.map((item) => (
         <li key={item} className="rounded-full bg-background-light px-3 py-1 text-sm text-accent">
           {item}
@@ -91,44 +91,36 @@ export default async function ProjectPage({ params }) {
     <section className="section mx-auto max-w-3xl px-2 py-10 md:px-6 md:py-20">
       <h1 className="heading mb-8 text-center">{project.title}</h1>
 
-      {sections ? (
-        <>
-          <Section title="The problem">
-            <p className="text-secondary leading-8">{sections.problem}</p>
-          </Section>
-          <Section title="What I built">
-            <p className="text-secondary leading-8">{sections.built}</p>
-          </Section>
-          {gallery}
-          {sections.challenges?.length > 0 && (
-            <Section title="Challenges">
-              <ul className="text-secondary list-disc space-y-2 pl-6 leading-8">
-                {sections.challenges.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            </Section>
-          )}
-          {sections.learned && (
-            <Section title="What I learned">
-              <p className="text-secondary leading-8">{sections.learned}</p>
-            </Section>
-          )}
-          {tags}
-          {buttons}
-          {demoLogin}
-        </>
-      ) : (
-        <>
-          <p className="text-secondary mb-8 text-center leading-8">
-            {project.longDescription ?? project.description}
-          </p>
-          {tags}
-          {buttons}
-          {demoLogin}
-          {gallery}
-        </>
+      {sections.problem && (
+        <Section title="The problem">
+          <p className="text-secondary leading-8">{sections.problem}</p>
+        </Section>
       )}
+      <Section title="What I built">
+        <p className="text-secondary leading-8">{sections.built}</p>
+      </Section>
+      {gallery}
+      {sections.challenges?.length > 0 && (
+        <Section title="Challenges">
+          <ul className="text-secondary list-disc space-y-2 pl-6 leading-8">
+            {sections.challenges.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </Section>
+      )}
+      {sections.learned?.length > 0 && (
+        <Section title="What I learned">
+          <ul className="text-secondary list-disc space-y-2 pl-6 leading-8">
+            {sections.learned.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </Section>
+      )}
+      {tags}
+      {buttons}
+      {demoLogin}
     </section>
   );
 }

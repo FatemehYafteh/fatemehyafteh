@@ -15,8 +15,10 @@ export const projects = [
         "Keeping the UI in sync with the server after every stock change, using TanStack Query.",
         "Building sortable, filterable tables with TanStack Table that still work well on small screens.",
       ],
-      // "What I learned" is shown when this field has text.
-      learned: "",
+      learned: [
+        "How to manage server state and caching instead of keeping everything in local state.",
+        "How to make data-heavy screens usable on mobile.",
+      ],
     },
     tech: [
       "React",
@@ -78,8 +80,10 @@ export const projects = [
     slug: "portfolio-website",
     description:
       "My own portfolio site, built with Next.js and Tailwind CSS: responsive, accessible, with security headers and share previews.",
-    longDescription:
-      "This website is built with Next.js (App Router) and Tailwind CSS. The layout is responsive from phone to desktop. A soft mouse-glow effect follows the cursor on desktop screens and is switched off for visitors who prefer reduced motion. Accessibility work includes a visible keyboard focus style and a mobile menu with labels that closes with the Escape key. For search and sharing it has page titles and descriptions, canonical links, a sitemap and robots file, and Open Graph and Twitter tags with a generated share image. Security headers are set in the Next.js config, and there are custom 404 and error pages. The site is deployed on Vercel. I designed this website and built the first version myself. Later improvements were made with Claude Code (AI), under my direction and review.",
+    sections: {
+      built:
+        "This website is built with Next.js (App Router) and Tailwind CSS. The layout is responsive from phone to desktop. A soft mouse-glow effect follows the cursor on desktop screens and is switched off for visitors who prefer reduced motion. Accessibility work includes a visible keyboard focus style and a mobile menu with labels that closes with the Escape key. For search and sharing it has page titles and descriptions, canonical links, a sitemap and robots file, and Open Graph and Twitter tags with a generated share image. Security headers are set in the Next.js config, and there are custom 404 and error pages. The site is deployed on Vercel. I designed this website and built the first version myself. Later improvements were made with Claude Code (AI), under my direction and review.",
+    },
     tech: ["Next.js", "React", "Tailwind CSS"],
     github: "https://github.com/FatemehYafteh/fatemehyafteh",
     demo: "https://fatemehyafteh.vercel.app",
