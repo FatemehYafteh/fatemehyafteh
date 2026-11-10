@@ -13,7 +13,7 @@ export default function Footer() {
           href={repoUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-1 block rounded-md text-accent underline-offset-4 hover:underline sm:mt-0 sm:inline"
+          className="mt-1 block rounded-md text-accent underline underline-offset-4 hover:no-underline sm:mt-0 sm:inline"
         >
           View source
         </a>
