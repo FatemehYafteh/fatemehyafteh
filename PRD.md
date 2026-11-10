@@ -68,7 +68,7 @@ A hiring manager or client opens the site, and within about a minute decides whe
 - The mouse-glow effect must not slow interaction (R4): no React state update per `mousemove`; it is off on touch devices and when `prefers-reduced-motion` is set.
 
 ### 5.2 Projects list
-- Each card shows: title, one-sentence summary, tech tags, and a View Project button. It also shows a Live Demo link and, under it, a demo login (email and password) so visitors can sign in. An image is added in Milestone 3.
+- Each card shows: title, one-sentence summary, tech tags, and a View Project button. It also shows a Live Demo link and, under it, a demo login (email and password) so visitors can sign in. Each card also shows one small thumbnail (the first screenshot, 16:10, cropped from the top).
 - **Acceptance:**
   - Cards render for all projects in `src/data/projects.js`.
   - Cards are shown one per row, centred, so one or two projects look intentional and more can be added later.
@@ -76,7 +76,8 @@ A hiring manager or client opens the site, and within about a minute decides whe
   - Each card is reachable and activatable by keyboard.
 
 ### 5.3 Project detail (`/projects/[slug]`)
-- Sections: Problem, Solution, Fatemeh's role, Tech stack, Screenshots, Live demo, GitHub, and Back to projects.
+- Sections: The problem, What I built, Challenges, What I learned, Tech stack, Screenshots, Live demo, GitHub, and Back to projects. Challenges and What I learned are optional; the Portfolio Website page has neither. There is no separate "role" section.
+- Screenshots: a gallery with equal 16:10 thumbnails (1, 2 or 3 columns by screen width) that open in a light lightbox built on the native `<dialog>` element (no library). Only the first image loads eagerly.
 - Missing optional data (for example no demo) hides that button, as the code already does for `github`.
 - **Acceptance:**
   - Every project has all required fields (see section 6).
@@ -127,16 +128,17 @@ A hiring manager or client opens the site, and within about a minute decides whe
 |---|---|---|
 | `title`, `slug` | Yes | Slug is lowercase with hyphens |
 | `description` (summary) | Yes | One or two sentences, used on the card |
-| `problem` | Yes | What need or pain the project addresses |
-| `solution` | Yes | What was built and key decisions |
-| `role` | Yes | What Fatemeh personally did (solo or team) |
+| `sections.problem` | Yes | What need or pain the project addresses ("The problem") |
+| `sections.built` | Yes | What was built and key decisions ("What I built") |
+| `sections.challenges` | Optional | Array of strings ("Challenges") |
+| `sections.learned` | Optional | Array of strings ("What I learned") |
 | `tech` | Yes | Array of tags |
-| `images` | Yes | 1-3 screenshots, with alt text; the first is the card image |
+| `images` | Yes | One or more screenshots (`src`, `width`, `height`, `alt`); the first is the card thumbnail |
 | `demo` | Strongly recommended | Live URL; if none, say why and show a short video or GIF |
 | `github` | Yes (public work) | Repository URL |
 | `highlights` | Optional | 2-4 bullet outcomes |
 
-**Gap today:** both projects (Inventory Manager and Portfolio Website) have a `demo` link and a `longDescription`, but neither has `images`, `problem`, `role` or `highlights`. Inventory Manager also has a `demoLogin`, and Portfolio Website uses the label "Live site" through `demoLabel`.
+**Status:** both projects (Inventory Manager and Portfolio Website) now have `sections`, `images`, `demo` and `github`. Inventory Manager also has `demoLogin` and six screenshots; Portfolio Website uses the label "Live site" through `demoLabel` and has one screenshot. Neither has `highlights`. A mobile screenshot and a role line for the Portfolio Website are still open decisions.
 
 ### Page content summary
 - **Home:** name, role, value line, availability, 2 calls to action.

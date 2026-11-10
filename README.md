@@ -60,12 +60,14 @@ src/
     Nav.jsx                  Navigation bar and mobile menu
     MouseEffect.jsx          Mouse glow effect (desktop only)
     CvButtons.jsx            CV download buttons (About and Contact)
+    ProjectGallery.jsx       Screenshot gallery and lightbox
   data/
     projects.js              Project content
   lib/
     site.js                  Site URL, repo URL and CV file list
     buttons.js               Shared button layout and styles
 public/
+  projects/                  Project screenshots (WebP, at most 1600px wide)
   Fatemeh-Yafteh-CV-EN.pdf   CV in English
   Fatemeh-Yafteh-CV-FA.pdf   CV in Persian
 ```
@@ -87,11 +89,25 @@ page, gets its own page at `/projects/<slug>`, and is added to the sitemap autom
   title: "My New Project",
   slug: "my-new-project",
   description: "One or two sentences shown on the project card.",
-  longDescription: "Optional. A longer description for the project page.",
+  sections: {
+    problem: "The problem the project solves.",
+    built: "What I built.",
+    challenges: ["Optional. One string per challenge."],
+    learned: ["Optional. One string per lesson."],
+  },
   tech: ["React", "Tailwind CSS"],
   github: "https://github.com/FatemehYafteh/my-new-project",
+  demo: "https://example.com", // optional; add demoLabel to change the button text
+  images: [
+    // The first image is the card thumbnail
+    { src: "/projects/my-image.webp", width: 1600, height: 800, alt: "Describe the image." },
+  ],
 }
 ```
+
+Put screenshots in `public/projects/` as WebP, at most 1600px wide, and give the real `width` and
+`height` so the page does not jump while loading. They show as equal 16:10 thumbnails (cropped from
+the top) and open in a lightbox.
 
 ## Accessibility and performance notes
 
