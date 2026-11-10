@@ -62,7 +62,7 @@ A hiring manager or client opens the site, and within about a minute decides whe
 ## 5. Functional requirements and acceptance criteria
 
 ### 5.1 Home
-- Shows name, role (front-end developer), a one-line value proposition, and an availability line, e.g. "Open to remote roles and freelance work."
+- Shows name, role (front-end developer), a one-line value proposition, and an availability line: "Based in Tehran, Iran (UTC+3:30). Open to remote and on-site or hybrid full-time roles, and to freelance projects." (done)
 - Two buttons: View Projects, Contact Me. Both are the same size (done in earlier commits, so keep it).
 - **Acceptance:** all text is readable on a 360px-wide phone without horizontal scroll; both buttons are reachable by keyboard with a visible focus ring; the page has exactly one `<h1>`.
 - The mouse-glow effect must not slow interaction (R4): no React state update per `mousemove`; it is off on touch devices and when `prefers-reduced-motion` is set.
@@ -86,7 +86,8 @@ A hiring manager or client opens the site, and within about a minute decides whe
   - Links to GitHub and the demo open in a new tab with `rel="noopener noreferrer"`.
 
 ### 5.4 About
-- Who Fatemeh is, her level, location and time zone, languages spoken, what she is looking for (remote front-end role, freelance), and a photo **[TBD: content from Fatemeh]**.
+- Who Fatemeh is, then a short block: Location (Tehran, Iran, UTC+3:30), Open to (full-time remote, full-time on-site or hybrid in Tehran, freelance or contract) and Languages (Persian native, English intermediate). Includes the CV buttons. Done.
+- Still open: a photo and a stated level (junior, mid), both **[TBD: content from Fatemeh]**.
 - **Acceptance:** states availability and target roles in the first screen; includes a CV link; contains no placeholder text.
 
 ### 5.5 Contact
@@ -215,7 +216,7 @@ No analytics exist yet, so the first milestone sets the baseline; targets come a
 
 **Open questions**
 1. What is the live URL and where is it hosted?
-2. Which roles and countries are you targeting, and what time zone are you in?
+2. ~~Which roles and countries are you targeting, and what time zone are you in?~~ Answered: full-time remote, full-time on-site or hybrid in Tehran, freelance; Tehran, Iran, UTC+3:30. Which other countries to target is still open.
 3. Is Telegram or WhatsApp a contact channel for Iranian clients?
 4. Is the Inventory Manager demo login (an admin account whose password is shown publicly on the app login page) safe to keep, and does the demo stay reachable?
 5. Do you want a Persian version?
