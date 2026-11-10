@@ -1,9 +1,11 @@
 "use client";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function Nav() {
   const [isOpen, setIsOpen] = useState(false);
+  const buttonRef = useRef(null);
+  const menuRef = useRef(null);
 
   const navItems = [
     { name: "Home", href: "/" },
@@ -23,13 +25,32 @@ export default function Nav() {
     };
   }, [isOpen]);
 
+  // Escape closes the menu and returns focus to the button. While the menu is open,
+  // Tab and Shift+Tab stay inside it (the button plus the menu links), because it is a modal dialog.
   useEffect(() => {
+    if (!isOpen) return;
+    menuRef.current?.querySelector("a")?.focus();
     const onKey = (e) => {
-      if (e.key === "Escape") setIsOpen(false);
+      if (e.key === "Escape") {
+        setIsOpen(false);
+        buttonRef.current?.focus();
+        return;
+      }
+      if (e.key !== "Tab") return;
+      const items = [buttonRef.current, ...menuRef.current.querySelectorAll("a")];
+      const first = items[0];
+      const last = items[items.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, []);
+  }, [isOpen]);
 
   return (
     <nav
@@ -66,6 +87,7 @@ export default function Nav() {
 
         {/* Mobile Hamburger */}
         <button
+          ref={buttonRef}
           className="-m-2 flex min-h-11 min-w-11 items-center justify-center rounded-md p-2 text-2xl text-(--color-accent) md:hidden"
           onClick={() => setIsOpen((s) => !s)}
           aria-controls="mobile-menu"
@@ -86,7 +108,10 @@ export default function Nav() {
           />
 
           {/* Menu */}
-          <ul className="animate-slideDown absolute top-full right-0 left-0 z-50 bg-(--color-background) pb-4 text-center shadow-xl">
+          <ul
+            ref={menuRef}
+            className="animate-slideDown absolute top-full right-0 left-0 z-50 bg-(--color-background) pb-4 text-center shadow-xl"
+          >
             {navItems.map((item) => (
               <li key={item.name}>
                 <Link
