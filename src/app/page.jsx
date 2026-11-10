@@ -18,7 +18,8 @@ export default function HomePage() {
           refined web applications using React, Next.js, and Tailwind CSS.
         </p>
         <p className="subheading mb-10 md:mb-6">
-          Explore my projects and skills, and feel free to get in touch!
+          Based in Tehran, Iran (UTC+3:30). Open to remote and on-site or hybrid full-time roles,
+          and to freelance projects.
         </p>
         <div className="flex flex-wrap justify-center gap-6">
           {/* Same width, and a transparent border so both buttons match the outline button's height */}
