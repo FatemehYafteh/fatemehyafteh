@@ -55,15 +55,17 @@ export default function MouseEffect() {
       ref={ref}
       aria-hidden="true"
       className="pointer-events-none fixed inset-0 z-[9999]"
-      style={{
-        "--mouse-x": "-100px",
-        "--mouse-y": "-100px",
-        background: `radial-gradient(
+      style={
+        /** @type {import("react").CSSProperties} */ ({
+          "--mouse-x": "-100px",
+          "--mouse-y": "-100px",
+          background: `radial-gradient(
          600px at var(--mouse-x) var(--mouse-y),
           rgba(29, 78, 216,0.15),
           transparent 80%
         )`,
-      }}
+        })
+      }
     ></div>
   );
 }

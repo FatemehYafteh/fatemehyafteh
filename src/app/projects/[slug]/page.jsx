@@ -40,6 +40,7 @@ export default async function ProjectPage({ params }) {
 
   if (!project) notFound();
 
+  /** @type {{ problem?: string, built: string, challenges?: string[], learned?: string[] }} */
   const sections = project.sections ?? { built: project.description };
 
   const tags = (

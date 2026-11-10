@@ -2,6 +2,17 @@
   "compilerOptions": {
     "paths": {
       "@/*": ["./src/*"]
-    }
-  }
+    },
+    "allowJs": true,
+    "checkJs": true,
+    "noEmit": true,
+    "jsx": "preserve",
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "target": "es2022",
+    "skipLibCheck": true,
+    "maxNodeModuleJsDepth": 0,
+    "lib": ["dom", "dom.iterable", "esnext"]
+  },
+  "include": ["src/**/*.js", "src/**/*.jsx"]
 }
