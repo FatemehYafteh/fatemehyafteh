@@ -98,7 +98,7 @@ A hiring manager or client opens the site, and within about a minute decides whe
 
 ### 5.6 CV download
 - A PDF file served from `/public`, linked from Nav or Home and Contact.
-- **Acceptance:** the link downloads a current, one-to-two-page PDF; the file name is `Fatemeh-Yafteh-CV.pdf`; the click is tracked as an analytics event.
+- **Acceptance:** the link downloads a current, one-to-two-page PDF; the file name is `Fatemeh-Yafteh-CV.pdf`.
 
 ### 5.7 404 and error pages
 - `not-found.jsx` and `error.jsx` with a short message and links to Home and Projects.
@@ -118,8 +118,8 @@ A hiring manager or client opens the site, and within about a minute decides whe
 - **Acceptance:** the whole site can be used with the keyboard only; Lighthouse Accessibility is at least 95; Escape closes the mobile menu and focus returns to the button.
 
 ### 5.11 Analytics
-- Privacy-friendly (Vercel Analytics or Plausible), no cookie banner. Custom events: CV download, email click, LinkedIn click, GitHub click, project link click, demo click.
-- **Acceptance:** each event appears in the dashboard when triggered in a test session; no personal data is collected.
+- Privacy-friendly (Vercel Analytics or Plausible), no cookie banner. **Decision (Fatemeh): no custom analytics events.** Page views only.
+- **Acceptance:** page views appear in the Vercel dashboard; no personal data is collected.
 
 ## 6. Content structure
 
@@ -193,9 +193,7 @@ No analytics exist yet, so the first milestone sets the baseline; targets come a
 
 | Metric | How measured | Target |
 |---|---|---|
-| Contact actions (email, LinkedIn, CV) per 100 visits | Analytics events | Baseline, then +50% **[TBD]** |
-| Project link clicks (detail, demo, GitHub) per visit | Analytics events | >= 40% of visitors open a project |
-| Average time on site | Analytics | >= 1.5 min **[TBD]** |
+| Page views and visitors | Vercel Web Analytics (page views only; no custom events) | Baseline first **[TBD]** |
 | Contact messages or interview requests received | Manual log | At least 1-2 per month **[TBD]** |
 | Lighthouse scores | Lighthouse CI | Section 9 targets |
 | Open high/critical vulnerabilities | `npm audit` in CI | 0 |
@@ -231,7 +229,7 @@ Each milestone ends with lint and build passing, then a review before the next o
 | **1** | **Fix the review findings** | Upgrade Next.js, run `npm audit fix` (R1); focus styles (R2); `mailto` link fix (R5); security headers (R8); delete leftover SVGs, run Prettier, remove commented code (R6, R13) | Audit clean; keyboard focus visible; build passes |
 | **2** | **Make it shareable** | `metadataBase`, Open Graph image, robots, sitemap (R10); custom 404 and error pages (R15); real README (R14); CV download | Link previews work; CV downloads |
 | **3** | **Prove the work** | New project data fields; screenshots and problem/solution/role for the Inventory Manager and Portfolio Website projects (R11, R12); rewrite About and Home availability lines (R16) | Every project meets section 6 |
-| **4** | **Measure and harden** | Analytics events; CI with lint, build and audit; Dependabot; Lighthouse pass; mobile menu focus handling (R3); mouse-effect performance and reduced-motion (R4) | Metrics visible; CI green; scores met |
+| **4** | **Measure and harden** | CI with lint, build and audit; Dependabot; Lighthouse pass; mobile menu focus handling (R3); mouse-effect performance and reduced-motion (R4) | Metrics visible; CI green; scores met |
 | **5** | **Later** | Skills section, Persian version, JSON-LD, TypeScript | By decision after seeing the metrics |
 
 **Fastest start (about an hour):** the Milestone 1 items, plus `metadataBase` and Open Graph tags.
